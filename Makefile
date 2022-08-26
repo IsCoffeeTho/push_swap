@@ -6,7 +6,7 @@
 #    By: amenadue <amenadue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/26 10:21:04 by amenadue          #+#    #+#              #
-#    Updated: 2022/08/26 10:34:34 by amenadue         ###   ########.fr        #
+#    Updated: 2022/08/26 11:36:39 by amenadue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,10 @@ NAME	=	push_swap
 
 SRCDIR	=	src/
 
-SRC		=	
+SRC		=	main.c \
+			ps_stack_utils.c \
+			ps_stack_debug.c \
+			ps_sort.c
 
 LIBS	=	libft
 
@@ -25,7 +28,7 @@ all:
 	@$(MAKE) $(NAME) -s || { printf "\e[91mError Compiling '$(NAME)'.\e[0m\n"; exit 1; }
 
 $(NAME):
-	$(CC) $(CCFLAGS) $(foreach file,$(SRC),$(SRCDIR)$(SRC)) $(LIBINC) -o $(NAME)
+	$(CC) $(CCFLAGS) $(foreach file,$(SRC),$(SRCDIR)$(file)) $(LIBINC) -o $(NAME)
 
 clean:
 	$(foreach lib,$(LIBS),$(MAKE) clean -s -C $(lib);)

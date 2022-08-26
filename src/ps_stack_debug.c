@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ps_stack_debug.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amenadue <amenadue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/26 10:35:51 by amenadue          #+#    #+#             */
-/*   Updated: 2022/08/26 11:36:07 by amenadue         ###   ########.fr       */
+/*   Created: 2022/08/26 11:13:07 by amenadue          #+#    #+#             */
+/*   Updated: 2022/08/26 11:34:54 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-int	main(int c, char **v)
+void	dump_stack(t_stack *stack)
 {
-	t_stack	*a;
-	t_stack	*b;
+	t_lst	*last;
 
-	if (c > 1)
+	if (stack)
 	{
-		a = init_stack(c - 1, v + 1);
-		b = empty_stack();
-		ps_begin(a, b);
-	}
-	else
-	{
-		ft_printf("\e[91mREQUIRES INPUTS\e[0m\n");
-		exit (1);
+		if (stack->size)
+		{
+			ft_printf("STACK:\n");
+			last = stack->root;
+			while (last)
+			{
+				ft_printf("- %d\n", last->data);
+				last = last->next;
+			}
+		}
+		else
+		{
+			ft_printf("Empty Stack\n");
+		}
 	}
 }

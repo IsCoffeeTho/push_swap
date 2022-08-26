@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+         #
+#    By: amenadue <amenadue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/13 17:55:39 by amenadue          #+#    #+#              #
-#    Updated: 2022/07/10 21:42:32 by amenadue         ###   ########.fr        #
+#    Updated: 2022/08/26 10:54:29 by amenadue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,19 +61,19 @@ CCFLAGS	=	-Wall -Wextra -Werror
 
 OBJS	= $(SRC:%.c=%.o)
 
-$(NAME):
+$(NAME).a:
 	-@$(CC) $(CCFLAGS) -c $(SRC) -I./
-	-@ar -rc ../$(NAME).a $(OBJS)
+	-@ar -rc $(NAME).a $(OBJS)
 	-@printf "made libft.a\n"
 
-all: $(NAME)
+all: $(NAME).a
 
 clean:
 	-@rm -f $(OBJS)
 
 fclean: clean
-	-@rm -f ../$(NAME).a
+	-@rm -f $(NAME).a
 
 re: fclean all
 
-.PHONY: all, clean, fclean, re
+.PHONY: all clean fclean re
