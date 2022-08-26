@@ -6,7 +6,7 @@
 /*   By: amenadue <amenadue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 10:35:51 by amenadue          #+#    #+#             */
-/*   Updated: 2022/08/26 11:36:07 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/08/26 12:37:58 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int	main(int c, char **v)
 {
-	t_stack	*a;
-	t_stack	*b;
+	t_s_ab	*sets;
 
 	if (c > 1)
 	{
-		a = init_stack(c - 1, v + 1);
-		b = empty_stack();
-		ps_begin(a, b);
+		sets = (t_s_ab *) ft_calloc(1, sizeof(t_s_ab));
+		sets->a = init_stack(c - 1, v + 1);
+		sets->b = empty_stack();
+		ps_begin(sets);
 	}
 	else
 	{

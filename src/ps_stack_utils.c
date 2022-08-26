@@ -6,7 +6,7 @@
 /*   By: amenadue <amenadue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 11:13:07 by amenadue          #+#    #+#             */
-/*   Updated: 2022/08/26 11:37:01 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/08/26 12:30:00 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int	append_stack(t_stack *stack, t_lst *item)
 		if (!stack->size)
 		{
 			stack->root = item;
+			stack->size++;
 			return (1);
 		}
 		else
@@ -58,15 +59,17 @@ int	append_stack(t_stack *stack, t_lst *item)
 			while (last->next != NULL)
 				last = last->next;
 			last->next = item;
+			stack->size++;
 			return (1);
 		}
 	}
+	write(2, "Bad Append to stack\n", 21);
 	return (0);
 }
 
 t_lst	*new_lst(int data)
 {
-	t_lst *item;
+	t_lst	*item;
 
 	item = (t_lst *) ft_calloc(1, sizeof(t_lst));
 	if (!item)

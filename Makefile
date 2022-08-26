@@ -6,7 +6,7 @@
 #    By: amenadue <amenadue@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/26 10:21:04 by amenadue          #+#    #+#              #
-#    Updated: 2022/08/26 11:36:39 by amenadue         ###   ########.fr        #
+#    Updated: 2022/08/26 12:23:58 by amenadue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,8 @@ SRC		=	main.c \
 LIBS	=	libft
 
 LIBINC	=	$(foreach lib,$(LIBS),-I$(lib) -L$(lib) -l$(subst lib,,$(lib)))
+
+init: re
 
 all:
 	@$(foreach lib,$(LIBS),$(MAKE) all -s -C $(lib) || { printf "\e[91mError Compiling '$(lib)'\e[0m\n"; exit 1; };)
