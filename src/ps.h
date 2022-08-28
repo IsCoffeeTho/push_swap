@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amenadue <amenadue@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 11:00:35 by amenadue          #+#    #+#             */
-/*   Updated: 2022/08/26 12:45:54 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/08/28 23:21:23 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ typedef struct s_stack {
 }	t_stack;
 
 typedef struct s_s_ab {
-	t_stack *a;
-	t_stack *b;
+	t_stack	*a;
+	t_stack	*b;
 }	t_s_ab;
 
 t_lst	*new_lst(int data);
@@ -35,11 +35,26 @@ t_lst	*new_lst(int data);
 t_stack	*init_stack(int c, char **v);
 t_stack	*empty_stack(void);
 int		append_stack(t_stack *stack, t_lst *item);
+void	free_stack(t_stack *stack);
+void	free_stacks(t_s_ab *stacks);
 
 void	ps_begin(t_s_ab *stacks);
+int		ps_check(t_s_ab *stacks);
 
 void	dump_stack(t_stack *stack);
+void	ps_test_seq(void);
+void	ps_stack_op_test(void (*f)(t_s_ab *));
 
 void	pa(t_s_ab *stacks);
+void	pb(t_s_ab *stacks);
+void	ra(t_s_ab *stacks);
+void	rb(t_s_ab *stacks);
+void	rr(t_s_ab *stacks);
+void	rra(t_s_ab *stacks);
+void	rrb(t_s_ab *stacks);
+void	rrr(t_s_ab *stacks);
+void	sa(t_s_ab *stacks);
+void	sb(t_s_ab *stacks);
+void	ss(t_s_ab *stacks);
 
 #endif

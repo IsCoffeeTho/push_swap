@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_stack_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amenadue <amenadue@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 11:13:07 by amenadue          #+#    #+#             */
-/*   Updated: 2022/08/26 12:30:00 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/08/28 23:24:04 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,20 @@ t_stack	*init_stack(int c, char **v)
 
 t_stack	*empty_stack(void)
 {
-	return ((t_stack *) ft_calloc(1, sizeof(t_stack)));
+	t_stack	*stack;
+
+	stack = (t_stack *) ft_calloc(1, sizeof(t_stack));
+	stack->root = NULL;
+	return (stack);
+}
+
+int	ps_check(t_s_ab *stacks)
+{
+	if (!stacks)
+		return (0);
+	if (!stacks->a || !stacks->a)
+		return (0);
+	return (1);
 }
 
 int	append_stack(t_stack *stack, t_lst *item)
@@ -47,19 +60,17 @@ int	append_stack(t_stack *stack, t_lst *item)
 
 	if (stack && item)
 	{
-		if (!stack->size)
+		if (!stack->root)
 		{
 			stack->root = item;
-			stack->size++;
 			return (1);
 		}
 		else
 		{
 			last = stack->root;
-			while (last->next != NULL)
+			while (last->next)
 				last = last->next;
 			last->next = item;
-			stack->size++;
 			return (1);
 		}
 	}

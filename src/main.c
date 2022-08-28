@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amenadue <amenadue@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 10:35:51 by amenadue          #+#    #+#             */
-/*   Updated: 2022/08/26 12:37:58 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/08/28 23:16:10 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,15 @@ int	main(int c, char **v)
 
 	if (c > 1)
 	{
-		sets = (t_s_ab *) ft_calloc(1, sizeof(t_s_ab));
-		sets->a = init_stack(c - 1, v + 1);
-		sets->b = empty_stack();
-		ps_begin(sets);
+		if (!ft_strncmp(v[1], "-t", 3))
+			ps_test_seq();
+		else
+		{
+			sets = (t_s_ab *) ft_calloc(1, sizeof(t_s_ab));
+			sets->a = init_stack(c - 1, v + 1);
+			sets->b = empty_stack();
+			ps_begin(sets);
+		}
 	}
 	else
 	{
