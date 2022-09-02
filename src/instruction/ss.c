@@ -6,7 +6,7 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 12:40:25 by amenadue          #+#    #+#             */
-/*   Updated: 2022/08/28 23:32:01 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/09/02 17:33:59 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,6 @@ static void	swap_stack(t_stack *stack)
 
 void	ss(t_s_ab *stacks)
 {
-	t_lst	*first;
-	t_lst	*second;
-
 	if (!ps_check(stacks))
 		return ;
 	swap_stack(stacks->a);

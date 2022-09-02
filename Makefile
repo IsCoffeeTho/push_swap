@@ -6,7 +6,7 @@
 #    By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/26 10:21:04 by amenadue          #+#    #+#              #
-#    Updated: 2022/08/28 23:40:38 by amenadue         ###   ########.fr        #
+#    Updated: 2022/09/02 18:06:01 by amenadue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ LIBINC	=	$(foreach lib,$(LIBS),-I$(lib) -L$(lib) -l$(subst lib,,$(lib)))
 
 CC		=	gcc
 
-CCFLAGS	=	-g3
+CCFLAGS	=	-Wall -Werror -Wextra
 
 init: re
 
@@ -52,4 +52,8 @@ fclean:
 
 re:	fclean all
 
-.PHONY: all clean fclean re
+run:
+	@./$(NAME) 10 9 8 7 6 5 4 3 2 1 0 | 
+
+
+.PHONY: all clean fclean re run
