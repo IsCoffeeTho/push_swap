@@ -6,7 +6,7 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 12:40:25 by amenadue          #+#    #+#             */
-/*   Updated: 2022/08/28 23:23:58 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/09/26 18:38:25 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,7 @@ void	pa(t_s_ab *stacks)
 	stacks->b->root->next = stacks->a->root;
 	stacks->a->root = stacks->b->root;
 	stacks->b->root = tmp;
+	stacks->a->size++;
+	stacks->b->size--;
 	ft_printf("pa\n");
 }

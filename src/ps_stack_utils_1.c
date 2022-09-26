@@ -6,7 +6,7 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 11:13:07 by amenadue          #+#    #+#             */
-/*   Updated: 2022/08/28 23:27:39 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/09/26 18:39:48 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,30 @@ void	free_stacks(t_s_ab *stacks)
 	if (stacks->b)
 		free_stack(stacks->b);
 	free(stacks);
+}
+
+void	stack_count(t_stack *stack)
+{
+	t_lst	*last;
+	int		i;
+
+	if (stack)
+	{
+		if (!stack->root)
+		{
+			stack->size = 0;
+		}
+		else
+		{
+			i = 0;
+			last = stack->root;
+			while (last->next)
+			{
+				last = last->next;
+				i++;
+			}
+			stack->size = i;
+		}
+	}
+	stack->size = 0;
 }

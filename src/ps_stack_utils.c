@@ -6,7 +6,7 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 11:13:07 by amenadue          #+#    #+#             */
-/*   Updated: 2022/08/28 23:24:04 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/09/26 18:40:58 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int	append_stack(t_stack *stack, t_lst *item)
 		if (!stack->root)
 		{
 			stack->root = item;
+			stack->size = 1;
 			return (1);
 		}
 		else
@@ -71,6 +72,7 @@ int	append_stack(t_stack *stack, t_lst *item)
 			while (last->next)
 				last = last->next;
 			last->next = item;
+			stack->size++;
 			return (1);
 		}
 	}
