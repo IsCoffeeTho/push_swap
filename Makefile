@@ -6,7 +6,7 @@
 #    By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/26 10:21:04 by amenadue          #+#    #+#              #
-#    Updated: 2022/09/28 08:15:48 by amenadue         ###   ########.fr        #
+#    Updated: 2022/09/28 09:14:47 by amenadue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,6 @@ all:
 	@$(MAKE) $(NAME) -s || { printf "\e[91mError Compiling '$(NAME)'.\e[0m\n"; exit 1; }
 	@printf "\n\e[1mUsage:\e[0m\n"
 	@printf "./$(NAME) <int> ...   Input a list of integers to sort\n"
-	@printf "./$(NAME) -t          Runs all the different operations and dumps the stacks in terminal.\n"
 
 $(NAME):
 	$(CC) $(CCFLAGS) $(foreach file,$(SRC),$(SRCDIR)$(file)) $(LIBINC) -o $(NAME)
@@ -52,9 +51,26 @@ fclean:
 
 re:	fclean all
 
+TEST1=16 1 13 19 15 12 21 10 11 7 17 6 3 5 9 18 20 8 2 4 14
+TEST2=-16 -1 -13 -19 -15 -12 -21 -10 -11 -7 -17 -6 -3 -5 -9 -18 -20 -8 -2 -4 -14
+TEST3=3 6 -19 -5 8 -13 12 4 0 16 -20 -17 -16 19 18 -6 -3 2 -14 -7 -8 9 10 13 -10 5 -12 7 -1 20 -4 11 -9 17 14 -11 -18 -2 1 -15 15 -21 21
+TEST5=2 4 3 1
+TEST5=1 11 19 5 14 45 4 16 27 15 48 2 47 3 30 17 31 13 38 35 43 36 10 24 22 34 6 32 42 7 12 40 49 41 23 50 25 29 46 33 8 28 37 39 18 21 9 20 26 44
+TEST6=38 86 93 58 2 82 85 44 97 6 37 33 56 29 55 79 62 71 61 18 46 15 9 43 77 98 50 53 39 25 69 78 87 100 8 19 13 67 81 10 74 27 3 35 17 66 31 89 26 75 48 54 49 5 1 52 32 96 41 83 64 47 68 91 92 42 12 88 23 84 30 22 80 21 90 63 94 20 11 73 99 76 72 59 28 14 65 70 60 51 57 34 40 36 24 95 45 16 4 7
 run:
-	ARGS="16 1 13 19 15 12 21 10 11 7 17 6 3 5 9 18 20 8 2 4 14 -16 -1 -13 -19 -15 -12 -21 -10 -11 -7 -17 -6 -3 -5 -9 -18 -20 -8 -2 -4 -14"
-	@./${NAME} $ARGS | ./checker_linux $ARGS
+	@printf "Running push_swap to checker:\n"
+	@printf "POSITIVE: "
+	@./${NAME} $(TEST1) | ./checker_linux $(TEST1)
+	@printf "NEGATIVE: "
+	@./${NAME} $(TEST2) | ./checker_linux $(TEST2)
+	@printf "BOTH: "
+	@./${NAME} $(TEST3) | ./checker_linux $(TEST3)
+	@printf "SMALL: "
+	@./${NAME} $(TEST4) | ./checker_linux $(TEST4)
+	@printf "BIG 50: "
+	@./${NAME} $(TEST5) | ./checker_linux $(TEST5)
+	@printf "BIG 100: "
+	@./${NAME} $(TEST6) | ./checker_linux $(TEST6)
 
 
 .PHONY: all clean fclean re run

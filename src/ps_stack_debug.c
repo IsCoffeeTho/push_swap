@@ -6,12 +6,16 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 11:13:07 by amenadue          #+#    #+#             */
-/*   Updated: 2022/09/27 22:29:42 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/09/28 09:05:05 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
+/** Prints the stack contents into stdout
+ *  will check if circular and empty
+ * 	PURELY FOR DEBUGGING
+*/
 void	dump_stack(t_stack *stack)
 {
 	t_lst	*last;
@@ -34,7 +38,7 @@ void	dump_stack(t_stack *stack)
 			}
 		}
 		else
-			ft_printf("Empty Stack\n");
+			ft_printf("STACK:\n  Empty\n");
 	}
 }
 
@@ -68,7 +72,7 @@ void	ps_test_seq(void)
 	ps_stack_op_test(&ss);
 }
 
-/** function allows the testing of certain operations*/
+/** function allows the testing of certain operations */
 void	ps_stack_op_test(void (*f)(t_s_ab *))
 {
 	t_s_ab	*sets;
