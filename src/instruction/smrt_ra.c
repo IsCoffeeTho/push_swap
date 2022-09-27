@@ -1,50 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rrr.c                                              :+:      :+:    :+:   */
+/*   ra.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 12:40:25 by amenadue          #+#    #+#             */
-/*   Updated: 2022/09/27 22:38:41 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/09/27 22:34:30 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ps.h"
 
-static void	rrotate_stack(t_stack *stack)
+/** (rotate a): shifts all elements in A up by one
+ * 	first element of A becomes the last element of A
+ */
+void	ra(t_s_ab *stacks)
 {
 	t_lst	*first;
-	t_lst	*penult;
+	t_lst	*second;
 	t_lst	*last;
 
-	if (!stack)
-		return ;
-	if (!stack->root)
-		return ;
-	if (!stack->root->next)
-		return ;
-	first = stack->root;
-	last = first;
-	while (last->next)
-	{
-		penult = last;
-		last = last->next;
-	}
-	penult->next = NULL;
-	last->next = first;
-	stack->root = last;
-}
-
-/** (rotate rotate r): shifts all elements in both stacks down by one
- * 	last element of A becomes the first element of A
- * 	last element of B becomes the first element of B
- */
-void	rrr(t_s_ab *stacks)
-{
 	if (!ps_check(stacks))
 		return ;
-	rrotate_stack(stacks->a);
-	rrotate_stack(stacks->b);
-	ft_printf("rrr\n");
+	if (!stacks->a->root)
+		return ;
+	if (!stacks->a->root->next)
+		return ;
+	first = stacks->a->root;
+	second = stacks->a->root->next;
+	last = stacks->a->root;
+	while (last->next)
+		last = last->next;
+	last->next = first;
+	stacks->a->root = second;
+	first->next = NULL;
+	ft_printf("ra\n");
 }

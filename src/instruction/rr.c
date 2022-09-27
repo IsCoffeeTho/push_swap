@@ -6,7 +6,7 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 12:40:25 by amenadue          #+#    #+#             */
-/*   Updated: 2022/09/13 05:17:38 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/09/27 22:39:10 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,10 @@ static void	rotate_stack(t_stack *stack)
 	first->next = NULL;
 }
 
+/** (rotate r): shifts all elements in both stacks up by one
+ * 	first element of A becomes the last element of A
+ * 	first element of B becomes the last element of B
+ */
 void	rr(t_s_ab *stacks)
 {
 	if (!ps_check(stacks))

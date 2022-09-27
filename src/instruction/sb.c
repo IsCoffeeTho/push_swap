@@ -6,12 +6,13 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 12:40:25 by amenadue          #+#    #+#             */
-/*   Updated: 2022/09/13 05:17:52 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/09/27 22:37:26 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ps.h"
 
+/** (swap b): swaps the first two elememts of B */
 void	sb(t_s_ab *stacks)
 {
 	t_lst	*first;

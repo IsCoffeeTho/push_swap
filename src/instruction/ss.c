@@ -6,7 +6,7 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 12:40:25 by amenadue          #+#    #+#             */
-/*   Updated: 2022/09/26 18:37:50 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/09/27 22:52:58 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ static void	swap_stack(t_stack *stack)
 	stack->root = second;
 }
 
+/** (swap s): swaps the first two elements of each stack
+ *  see (swap a) sa.c
+*/
 void	ss(t_s_ab *stacks)
 {
 	if (!ps_check(stacks))

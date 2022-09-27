@@ -6,7 +6,7 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 11:00:35 by amenadue          #+#    #+#             */
-/*   Updated: 2022/09/26 18:42:00 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/09/28 08:02:04 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,9 @@ void	rrr(t_s_ab *stacks);
 void	sa(t_s_ab *stacks);
 void	sb(t_s_ab *stacks);
 void	ss(t_s_ab *stacks);
+
+void	smrt_ra(t_s_ab *stacks);
+void	smrt_rb(t_s_ab *stacks);
+void	smrt_rr(t_s_ab *stacks);
 
 #endif

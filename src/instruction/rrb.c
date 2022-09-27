@@ -6,12 +6,15 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 12:40:25 by amenadue          #+#    #+#             */
-/*   Updated: 2022/09/13 05:17:44 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/09/27 22:36:04 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ps.h"
 
+/** (rotate rotate b): shifts all elements in B down by one
+ * 	last element of B becomes the first element of B
+ */
 void	rrb(t_s_ab *stacks)
 {
 	t_lst	*first;
