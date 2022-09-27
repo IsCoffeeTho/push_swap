@@ -6,7 +6,7 @@
 #    By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/26 10:21:04 by amenadue          #+#    #+#              #
-#    Updated: 2022/09/28 09:14:47 by amenadue         ###   ########.fr        #
+#    Updated: 2022/09/28 09:18:34 by amenadue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,14 @@ LIBINC	=	$(foreach lib,$(LIBS),-I$(lib) -L$(lib) -l$(subst lib,,$(lib)))
 CC		=	gcc
 
 CCFLAGS	=	-Wall -Werror -Wextra -D DEBUG
+
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Linux)
+	CHECKER = checker_linux
+endif
+ifeq ($(UNAME_S),Darwin)
+	CHECKER = checker_Mac
+endif
 
 init: re
 
@@ -60,17 +68,17 @@ TEST6=38 86 93 58 2 82 85 44 97 6 37 33 56 29 55 79 62 71 61 18 46 15 9 43 77 98
 run:
 	@printf "Running push_swap to checker:\n"
 	@printf "POSITIVE: "
-	@./${NAME} $(TEST1) | ./checker_linux $(TEST1)
+	@./${NAME} $(TEST1) | ./$(CHECKER) $(TEST1)
 	@printf "NEGATIVE: "
-	@./${NAME} $(TEST2) | ./checker_linux $(TEST2)
+	@./${NAME} $(TEST2) | ./$(CHECKER) $(TEST2)
 	@printf "BOTH: "
-	@./${NAME} $(TEST3) | ./checker_linux $(TEST3)
+	@./${NAME} $(TEST3) | ./$(CHECKER) $(TEST3)
 	@printf "SMALL: "
-	@./${NAME} $(TEST4) | ./checker_linux $(TEST4)
+	@./${NAME} $(TEST4) | ./$(CHECKER) $(TEST4)
 	@printf "BIG 50: "
-	@./${NAME} $(TEST5) | ./checker_linux $(TEST5)
+	@./${NAME} $(TEST5) | ./$(CHECKER) $(TEST5)
 	@printf "BIG 100: "
-	@./${NAME} $(TEST6) | ./checker_linux $(TEST6)
+	@./${NAME} $(TEST6) | ./$(CHECKER) $(TEST6)
 
 
 .PHONY: all clean fclean re run
