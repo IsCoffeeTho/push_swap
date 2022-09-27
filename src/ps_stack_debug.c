@@ -6,7 +6,7 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 11:13:07 by amenadue          #+#    #+#             */
-/*   Updated: 2022/09/13 04:36:50 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/09/27 22:29:42 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ void	ps_test_seq(void)
 	ps_stack_op_test(&sb);
 	ps_stack_op_test(&ss);
 }
-
 
 /** function allows the testing of certain operations*/
 void	ps_stack_op_test(void (*f)(t_s_ab *))
