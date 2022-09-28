@@ -17,9 +17,9 @@ we then get the first bit of each item
 then if its on we push it to B
 ```
 eg:
-21 is 0010101 in binary
-            ^ this is the first bit
-			meaning that it gets pushed to B
+21 is 00010101 in binary
+             ^ this is the first bit
+        meaning that it gets pushed to B
 ```
 after looking at each item the stacks will look like this
 ```
@@ -66,6 +66,7 @@ B: [21 20 19 18 17 16]
 A: [1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21]
 B: [empty]
 ```
+
 ### Psuedo-Code
 ```
 A = [...Get Elements...]

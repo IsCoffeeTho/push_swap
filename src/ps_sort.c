@@ -6,7 +6,7 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 11:13:07 by amenadue          #+#    #+#             */
-/*   Updated: 2022/09/28 08:14:25 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/09/28 18:31:25 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,6 @@ void	radix_sort(t_s_ab *stacks, int max)
 			l = i;
 		i++;
 	}
-	l <<= 1;
 	i = 0;
 	while (i <= l)
 	{
@@ -138,27 +137,19 @@ void	radix_sort(t_s_ab *stacks, int max)
 void	ps_begin(t_s_ab *stacks)
 {
 	int	max;
-	int	and_neg;
-	int	i;
+	int	min;
 	int	l;
 
 	if (!ps_check(stacks))
 		return ;
-	i = 0;
-	l = (int) stacks->a->size;
-	max = (0x1 << ((sizeof(int) * 8) - 1));
-	and_neg = 0;
-	while (i < l)
-	{
-		if (max <= stacks->a->root->data)
-			max = stacks->a->root->data;
-		if (stacks->a->root->data < 0)
-			and_neg = -1;
-		ra(stacks);
-		i++;
-	}
+	l = stacks->a->size;
+	max = get_max_value(stacks);
+	min = get_min_value(stacks);
+	if (max < (0 - min))
+		max = (0 - min);
 	radix_sort(stacks, max);
-	if (and_neg)
+	if (min < 0)
 		radix_sort_neg(stacks);
 	reverse_stack(stacks, l);
 }
+//dump_stack(stacks->a);
