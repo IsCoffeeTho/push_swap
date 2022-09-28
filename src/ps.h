@@ -6,7 +6,7 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 11:00:35 by amenadue          #+#    #+#             */
-/*   Updated: 2022/09/28 18:16:28 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/09/28 20:21:17 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	free_stacks(t_s_ab *stacks);
 void	stack_count(t_stack *stack);
 
 void	ps_begin(t_s_ab *stacks);
+void	ps_choose(t_s_ab *stacks);
 int		ps_check(t_s_ab *stacks);
 
 int		get_max_value(t_s_ab *stacks);

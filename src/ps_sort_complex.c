@@ -6,7 +6,7 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 11:13:07 by amenadue          #+#    #+#             */
-/*   Updated: 2022/09/28 18:31:25 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/09/28 20:11:32 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,4 +152,3 @@ void	ps_begin(t_s_ab *stacks)
 		radix_sort_neg(stacks);
 	reverse_stack(stacks, l);
 }
-//dump_stack(stacks->a);

@@ -6,7 +6,7 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 10:35:51 by amenadue          #+#    #+#             */
-/*   Updated: 2022/09/28 18:36:16 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/09/28 20:21:07 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main(int c, char **v)
 			sets = (t_s_ab *) ft_calloc(1, sizeof(t_s_ab));
 			sets->a = init_stack(c - 1, v + 1);
 			sets->b = empty_stack();
-			ps_begin(sets);
+			ps_choose(sets);
 		}
 		else
 		{
