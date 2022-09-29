@@ -6,7 +6,7 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 10:35:51 by amenadue          #+#    #+#             */
-/*   Updated: 2022/09/28 20:21:07 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/09/29 12:46:39 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ int	check_args(int c, char **v)
 	int	j;
 	int	k;
 
+	i = 0;
 	while (i < c)
 	{
+		j = 0;
 		k = ft_strlen(v[i]);
 		while (j < k)
 		{
