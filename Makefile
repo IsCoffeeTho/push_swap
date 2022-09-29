@@ -6,7 +6,7 @@
 #    By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/26 10:21:04 by amenadue          #+#    #+#              #
-#    Updated: 2022/09/28 20:13:19 by amenadue         ###   ########.fr        #
+#    Updated: 2022/09/29 10:23:52 by amenadue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,7 +81,7 @@ run:
 	@./${NAME} $(TEST5) | ./$(CHECKER) $(TEST5)
 	@printf "BIG 100: "
 	@./${NAME} $(TEST6) | ./$(CHECKER) $(TEST6)
-	@printf "BIGGER NEG: "
+	@printf "MORE - THAN + : "
 	@./${NAME} $(TEST7) | ./$(CHECKER) $(TEST7)
 
 
