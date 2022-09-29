@@ -139,8 +139,10 @@ func RadixSort( A and B )
 
 	if the lowest number is further away from 0 than the higher is
 		make the maximum the negative of the lowest number
-	else make the maximum the highest number
-		get the highest bit that is on in the highest number
+	else
+		make the maximum the highest number
+	
+	get the highest bit that is on in the highest number
 
 	make that the highestRadix
 
