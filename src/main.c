@@ -6,7 +6,7 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 10:35:51 by amenadue          #+#    #+#             */
-/*   Updated: 2022/09/29 12:46:39 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/09/29 12:53:06 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,16 @@ int	check_args(int c, char **v)
 	int	j;
 	int	k;
 
-	i = 0;
+	i = 1;
 	while (i < c)
 	{
-		j = 0;
+		j = 1;
 		k = ft_strlen(v[i]);
+		if (!(v[i][0] == '-' || ft_isdigit(v[i][0])))
+			return (0);
 		while (j < k)
 		{
-			if (!(v[i][j] == '-' && ft_isdigit(v[i][j])))
+			if (!ft_isdigit(v[i][j]))
 				return (0);
 			j++;
 		}
