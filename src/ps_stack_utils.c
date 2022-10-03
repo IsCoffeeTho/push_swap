@@ -6,7 +6,7 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 11:13:07 by amenadue          #+#    #+#             */
-/*   Updated: 2022/10/03 17:14:03 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/10/03 22:37:32 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ t_stack	*init_stack(int c, char **v)
 {
 	t_stack	*stack;
 	int		i;
-	int		j;
 
 	stack = (t_stack *) ft_calloc(1, sizeof(t_stack));
 	i = 0;
@@ -26,13 +25,7 @@ t_stack	*init_stack(int c, char **v)
 	{
 		while (i < c)
 		{
-			j = ft_atoi(v[i]);
-			if ((v[i][0] == '-' && j > 0) || (v[i][0] != '-' && j < 0))
-			{
-				write(1, "Error\n", 6);
-				exit(1);
-			}
-			if (!append_stack(stack, new_lst(j)))
+			if (!append_stack(stack, new_lst(v[i])))
 			{
 				write(2, "Error\n", 6);
 				exit(1);
@@ -87,13 +80,20 @@ int	append_stack(t_stack *stack, t_lst *item)
 	return (0);
 }
 
-t_lst	*new_lst(int data)
+t_lst	*new_lst(char *data)
 {
+	int		j;
 	t_lst	*item;
 
+	j = ft_atoi(data);
+	if ((data[0] == '-' && j > 0) || (data[0] != '-' && j < 0))
+	{
+		write(1, "Error\n", 6);
+		exit(1);
+	}
 	item = (t_lst *) ft_calloc(1, sizeof(t_lst));
 	if (!item)
 		return (NULL);
-	item->data = data;
+	item->data = j;
 	return (item);
 }

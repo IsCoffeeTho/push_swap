@@ -6,7 +6,7 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 11:00:35 by amenadue          #+#    #+#             */
-/*   Updated: 2022/10/03 16:56:24 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/10/03 22:35:00 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_s_ab {
 	t_stack	*b;
 }	t_s_ab;
 
-t_lst	*new_lst(int data);
+t_lst	*new_lst(char *data);
 
 t_stack	*init_stack(int c, char **v);
 t_stack	*empty_stack(void);

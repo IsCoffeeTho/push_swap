@@ -6,7 +6,7 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 10:35:51 by amenadue          #+#    #+#             */
-/*   Updated: 2022/10/03 16:57:04 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/10/03 22:29:04 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 /*
 	To Do:
-
-	index items for radix
+	optimize
 */
 
+/* runs through the stack ands checks for duplicates */
 void	check_set_dupe(t_s_ab *stacks)
 {
 	t_lst	*lastcheck;

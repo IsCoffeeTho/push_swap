@@ -6,7 +6,7 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 11:13:07 by amenadue          #+#    #+#             */
-/*   Updated: 2022/10/03 16:39:28 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/10/03 22:37:10 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,18 @@ void	dump_stack(t_stack *stack)
 /** Generates the standard [1-5] stack for tests */
 static t_stack	*test_stack(void)
 {
+	char	buf[2];
 	t_stack	*stack;
 	int		i;
 
 	stack = empty_stack();
 	i = 0;
+	buf[1] = 0;
 	while (i++ < 4)
-		append_stack(stack, new_lst(i));
+	{
+		buf[0] = '0' + i;
+		append_stack(stack, new_lst(buf));
+	}
 	return (stack);
 }
 
