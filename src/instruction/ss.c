@@ -6,13 +6,14 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 12:40:25 by amenadue          #+#    #+#             */
-/*   Updated: 2022/09/27 22:52:58 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/10/03 17:04:27 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ps.h"
 
-static void	swap_stack(t_stack *stack)
+/* Runs the swap stack */
+void	swap_stack(t_stack *stack)
 {
 	t_lst	*first;
 	t_lst	*second;
@@ -25,8 +26,6 @@ static void	swap_stack(t_stack *stack)
 	if (!first->next)
 		return ;
 	second = first->next;
-	if (!second->next)
-		return ;
 	first->next = second->next;
 	second->next = first;
 	stack->root = second;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_sort.c                                          :+:      :+:    :+:   */
+/*   ps_sort_complex.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 11:13:07 by amenadue          #+#    #+#             */
-/*   Updated: 2022/09/28 20:11:32 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/10/03 16:52:10 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	sort_on_radix(t_s_ab *stacks, int radix)
 	l = stacks->a->size;
 	while (i < l)
 	{
-		if (stacks->a->root->data & radix)
+		if (stacks->a->root->index & radix)
 			pb(stacks);
 		else
 			smrt_ra(stacks);
@@ -137,18 +137,12 @@ void	radix_sort(t_s_ab *stacks, int max)
 void	ps_begin(t_s_ab *stacks)
 {
 	int	max;
-	int	min;
 	int	l;
 
 	if (!ps_check(stacks))
 		return ;
 	l = stacks->a->size;
 	max = get_max_value(stacks);
-	min = get_min_value(stacks);
-	if (max < (0 - min))
-		max = (0 - min);
 	radix_sort(stacks, max);
-	if (min < 0)
-		radix_sort_neg(stacks);
 	reverse_stack(stacks, l);
 }

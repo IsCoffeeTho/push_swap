@@ -6,11 +6,45 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 10:35:51 by amenadue          #+#    #+#             */
-/*   Updated: 2022/09/29 12:53:06 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/10/03 16:57:04 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
+
+/*
+	To Do:
+
+	index items for radix
+*/
+
+void	check_set_dupe(t_s_ab *stacks)
+{
+	t_lst	*lastcheck;
+	t_lst	*last;
+	int		i;
+	int		j;
+
+	lastcheck = stacks->a->root;
+	i = 0;
+	while (lastcheck)
+	{
+		j = 0;
+		last = stacks->a->root;
+		while (j < i)
+		{
+			if (last->data == lastcheck->data)
+			{
+				write(2, "Error\n", 6);
+				exit(1);
+			}
+			last = last->next;
+			j++;
+		}
+		lastcheck = lastcheck->next;
+		i++;
+	}
+}
 
 int	check_args(int c, char **v)
 {
@@ -47,19 +81,13 @@ int	main(int c, char **v)
 			sets = (t_s_ab *) ft_calloc(1, sizeof(t_s_ab));
 			sets->a = init_stack(c - 1, v + 1);
 			sets->b = empty_stack();
+			check_set_dupe(sets);
 			ps_choose(sets);
 		}
 		else
 		{
 			write(2, "Error\n", 6);
-			ft_printf("\e[91mMust be Numbers\e[0m\n");
-			exit (1);
+			return (1);
 		}
-	}
-	else
-	{
-		write(2, "Error\n", 6);
-		ft_printf("\e[91mREQUIRES INPUTS\e[0m\n");
-		exit (1);
 	}
 }

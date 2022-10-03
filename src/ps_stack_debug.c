@@ -6,7 +6,7 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 11:13:07 by amenadue          #+#    #+#             */
-/*   Updated: 2022/09/28 09:05:05 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/10/03 16:39:28 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	dump_stack(t_stack *stack)
 			last = stack->root;
 			while (last)
 			{
-				ft_printf("- %d\n", last->data);
+				ft_printf("- %d : %d\n", last->data, last->index);
 				last = last->next;
 				if (last == stack->root)
 				{

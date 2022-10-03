@@ -6,7 +6,7 @@
 #    By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/26 10:21:04 by amenadue          #+#    #+#              #
-#    Updated: 2022/09/29 12:53:28 by amenadue         ###   ########.fr        #
+#    Updated: 2022/10/03 16:07:16 by amenadue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRC		=	main.c \
 			instruction/*.c \
 			ps_stack_utils.c \
 			ps_stack_utils_1.c \
+			ps_stack_utils_2.c \
 			ps_stack_debug.c \
 			ps_sort_complex.c \
 			ps_sort_simple.c
@@ -30,7 +31,7 @@ LIBINC	=	$(foreach lib,$(LIBS),-I$(lib) -L$(lib) -l$(subst lib,,$(lib)))
 
 CC		=	gcc
 
-CCFLAGS	=	-Wall -Werror -Wextra -D DEBUG
+CCFLAGS	=	-Wall -Werror -Wextra -D DEBUG -g3
 
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Linux)

@@ -6,7 +6,7 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 11:00:35 by amenadue          #+#    #+#             */
-/*   Updated: 2022/09/28 20:21:17 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/10/03 16:56:24 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 typedef struct s_lst {
 	int				data;
+	int				index;
 	struct s_lst	*next;
 }	t_lst;
 
@@ -38,6 +39,8 @@ int		append_stack(t_stack *stack, t_lst *item);
 void	free_stack(t_stack *stack);
 void	free_stacks(t_s_ab *stacks);
 void	stack_count(t_stack *stack);
+void	check_set_sorted(t_s_ab *stacks);
+t_s_ab	*clone_stacks(t_s_ab *stacks);
 
 void	ps_begin(t_s_ab *stacks);
 void	ps_choose(t_s_ab *stacks);
@@ -52,15 +55,19 @@ void	ps_stack_op_test(void (*f)(t_s_ab *));
 
 void	pa(t_s_ab *stacks);
 void	pb(t_s_ab *stacks);
+void	push_stack(t_stack *from, t_stack *to);
 void	ra(t_s_ab *stacks);
 void	rb(t_s_ab *stacks);
 void	rr(t_s_ab *stacks);
+void	rotate_stack(t_stack *stack);
 void	rra(t_s_ab *stacks);
 void	rrb(t_s_ab *stacks);
 void	rrr(t_s_ab *stacks);
+void	rrotate_stack(t_stack *stack);
 void	sa(t_s_ab *stacks);
 void	sb(t_s_ab *stacks);
 void	ss(t_s_ab *stacks);
+void	swap_stack(t_stack *stack);
 
 void	smrt_ra(t_s_ab *stacks);
 void	smrt_rb(t_s_ab *stacks);

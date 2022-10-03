@@ -6,7 +6,7 @@
 /*   By: amenadue <amenadue@student.42adel.org.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 11:13:07 by amenadue          #+#    #+#             */
-/*   Updated: 2022/09/28 18:32:12 by amenadue         ###   ########.fr       */
+/*   Updated: 2022/10/03 17:14:03 by amenadue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ t_stack	*init_stack(int c, char **v)
 {
 	t_stack	*stack;
 	int		i;
+	int		j;
 
 	stack = (t_stack *) ft_calloc(1, sizeof(t_stack));
 	i = 0;
@@ -25,10 +26,16 @@ t_stack	*init_stack(int c, char **v)
 	{
 		while (i < c)
 		{
-			if (!append_stack(stack, new_lst(ft_atoi(v[i]))))
+			j = ft_atoi(v[i]);
+			if ((v[i][0] == '-' && j > 0) || (v[i][0] != '-' && j < 0))
 			{
-				write(2, "Couldn't append a value to the stack.\n", 39);
-				return (NULL);
+				write(1, "Error\n", 6);
+				exit(1);
+			}
+			if (!append_stack(stack, new_lst(j)))
+			{
+				write(2, "Error\n", 6);
+				exit(1);
 			}
 			i++;
 		}
